@@ -228,14 +228,14 @@ int get_statistics(char* result)
   return 400;
 
   #define pointer_reset_database_array \
-  for (count = 0; count < 17; count++) \
+  for (count = 0; count < 11; count++) \
   { \
     pointer_reset(database_data.item[count]); \
     pointer_reset(database_data.value[count]); \
   } \
   for (count = 0; count < document_count; count++) \
   { \
-    for (counter = 0; counter < 24; counter++) \
+    for (counter = 0; counter < 18; counter++) \
     { \
       pointer_reset(database_multiple_documents_fields.item[count][counter]); \
       pointer_reset(database_multiple_documents_fields.value[count][counter]); \
@@ -267,7 +267,7 @@ int get_statistics(char* result)
   }
 
   // initialize the database_document_fields struct 
-  for (count = 0; count < 17; count++)
+  for (count = 0; count < 11; count++)
   {
     database_data.item[count] = (char*)calloc(BUFFER_SIZE,sizeof(char));
     database_data.value[count] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -277,7 +277,7 @@ int get_statistics(char* result)
   // initialize the database_multiple_documents_fields struct 
   for (count = 0; count < document_count; count++)
   {
-    for (counter = 0; counter < 24; counter++)
+    for (counter = 0; counter < 18; counter++)
     {
       database_multiple_documents_fields.item[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
       database_multiple_documents_fields.value[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -320,7 +320,7 @@ int get_statistics(char* result)
   // get the total votes
   for (count = 0, count2 = 0; count < document_count; count++)
   {
-    for (counter = 0; counter < 24; counter++)
+    for (counter = 0; counter < 18; counter++)
     {
       if (strncmp(database_multiple_documents_fields.item[count][counter],"total_vote_count",BUFFER_SIZE) == 0)
       {
@@ -409,7 +409,7 @@ int get_delegates(char* result)
   #define pointer_reset_database_array \
   for (count = 0; count < document_count; count++) \
   { \
-    for (counter = 0; counter < 24; counter++) \
+    for (counter = 0; counter < 18; counter++) \
     { \
       pointer_reset(database_data.item[count][counter]); \
       pointer_reset(database_data.value[count][counter]); \
@@ -430,7 +430,7 @@ int get_delegates(char* result)
   // initialize the database_multiple_documents_fields struct 
   for (count = 0; count < document_count; count++)
   {
-    for (counter = 0; counter < 24; counter++)
+    for (counter = 0; counter < 18; counter++)
     {
       database_data.item[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
       database_data.value[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -496,14 +496,14 @@ int get_delegates_statistics(struct MHD_Connection* connection, char* result)
   return 400;
   
   #define pointer_reset_database_array \
-  for (count = 0; count < 25; count++) \
+  for (count = 0; count < 19; count++) \
   { \
     pointer_reset(database_data.item[count]); \
     pointer_reset(database_data.value[count]); \
   } \
   for (count = 0; count < document_count; count++) \
   { \
-    for (counter = 0; counter < 24; counter++) \
+    for (counter = 0; counter < 18; counter++) \
     { \
       pointer_reset(database_multiple_documents_fields.item[count][counter]); \
       pointer_reset(database_multiple_documents_fields.value[count][counter]); \
@@ -555,7 +555,7 @@ int get_delegates_statistics(struct MHD_Connection* connection, char* result)
   }
   
   // initialize the database_document_fields struct 
-  for (count = 0; count < 25; count++)
+  for (count = 0; count < 19; count++)
   {
     database_data.item[count] = (char*)calloc(BUFFER_SIZE,sizeof(char));
     database_data.value[count] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -576,7 +576,7 @@ int get_delegates_statistics(struct MHD_Connection* connection, char* result)
   // initialize the database_multiple_documents_fields struct 
   for (count = 0; count < document_count; count++)
   {
-    for (counter = 0; counter < 24; counter++)
+    for (counter = 0; counter < 18; counter++)
     {
       database_multiple_documents_fields.item[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
       database_multiple_documents_fields.value[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -608,8 +608,8 @@ int get_delegates_statistics(struct MHD_Connection* connection, char* result)
 
   memset(data,0,strlen(data));
   sprintf(data, "%zu", counter);
-  memcpy(database_data.item[24],"current_delegate_rank",21);
-  memcpy(database_data.value[24],data,strnlen(data,BUFFER_SIZE));
+  memcpy(database_data.item[18],"current_delegate_rank",21);
+  memcpy(database_data.value[18],data,strnlen(data,BUFFER_SIZE));
   database_data.count++;
 
   memset(result,0,strnlen(result,BUFFER_SIZE)); 
@@ -664,7 +664,7 @@ int get_delegates_information(struct MHD_Connection* connection, char* result)
   return 400;
   
   #define pointer_reset_database_array \
-  for (count = 0; count < 24; count++) \
+  for (count = 0; count < 18; count++) \
   { \
     pointer_reset(database_data.item[count]); \
     pointer_reset(database_data.value[count]); \
@@ -715,7 +715,7 @@ int get_delegates_information(struct MHD_Connection* connection, char* result)
   }
   
   // initialize the database_document_fields struct 
-  for (count = 0; count < 24; count++)
+  for (count = 0; count < 18; count++)
   {
     database_data.item[count] = (char*)calloc(BUFFER_SIZE,sizeof(char));
     database_data.value[count] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -976,7 +976,7 @@ int get_round_statistics(struct MHD_Connection* connection, char* result)
   }
 
   // reset the database_document_fields struct 
-  for (count = 0; count < 62; count++)
+  for (count = 0; count < 36; count++)
   {
     memset(database_document_fields.item[count],0,strlen(database_document_fields.item[count]));
     memset(database_document_fields.value[count],0,strlen(database_document_fields.value[count]));
@@ -1016,12 +1016,12 @@ int get_round_statistics(struct MHD_Connection* connection, char* result)
 
   // check if there is any data in the database that matches the message
   if (count_documents_in_collection(DATABASE_NAME,data2,data3,0) <= 0)
-  {
+  {fprintf(stderr,"3");
     GET_ROUND_STATISTICS_ERROR;
   }
 
   if (read_document_all_fields_from_collection(DATABASE_NAME,data2,data3,&database_document_fields,0) == 0)
-  {
+  {fprintf(stderr,"4");
     GET_ROUND_STATISTICS_ERROR;
   }
   
@@ -1044,13 +1044,13 @@ int get_round_statistics(struct MHD_Connection* connection, char* result)
 
   // check if there is any data in the database that matches the message
   if (count_documents_in_collection(DATABASE_NAME,data2,data3,0) <= 0)
-  {
+  {fprintf(stderr,"5");
     GET_ROUND_STATISTICS_ERROR;
   }
 
   memset(result,0,strlen(result));
   if (read_document_field_from_collection(DATABASE_NAME,data2,data3,"reserve_bytes",result,0) == 0)
-  {
+  {fprintf(stderr,"6");
     GET_ROUND_STATISTICS_ERROR;
   }
 
@@ -1061,7 +1061,7 @@ int get_round_statistics(struct MHD_Connection* connection, char* result)
   memset(result,0,strlen(result));
 
   // verify the block
-  for (count = 0; count < 62; count++)
+  for (count = 0; count < 36; count++)
   {
     if (strncmp(database_document_fields.item[count],"reserve_bytes",BUFFER_SIZE) == 0)
     {
@@ -1122,7 +1122,7 @@ int get_delegates_nodes_list(char* result)
   #define pointer_reset_database_array \
   for (count = 0; count < MAXIMUM_DELEGATES_COUNT; count++) \
   { \
-    for (counter = 0; counter < 24; counter++) \
+    for (counter = 0; counter < 18; counter++) \
     { \
       pointer_reset(database_data.item[count][counter]); \
       pointer_reset(database_data.value[count][counter]); \
@@ -1132,7 +1132,7 @@ int get_delegates_nodes_list(char* result)
   // initialize the database_multiple_documents_fields struct 
   for (count = 0; count < MAXIMUM_DELEGATES_COUNT; count++)
   {
-    for (counter = 0; counter < 24; counter++)
+    for (counter = 0; counter < 18; counter++)
     {
       database_data.item[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
       database_data.value[count][counter] = (char*)calloc(BUFFER_SIZE,sizeof(char));
@@ -1149,7 +1149,7 @@ int get_delegates_nodes_list(char* result)
   memset(result,0,strnlen(result,BUFFER_SIZE)); 
   for (count = 0; count < MAXIMUM_DELEGATES_COUNT; count++)
   {
-    for (counter = 0; counter < 24; counter++)
+    for (counter = 0; counter < 18; counter++)
     {
       if (memcmp(database_data.item[count][counter],"IP_address",10) == 0)
       {

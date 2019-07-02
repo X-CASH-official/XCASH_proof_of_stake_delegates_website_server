@@ -356,7 +356,6 @@ int check_found_block(const int MESSAGE_SETTINGS)
     pointer_reset_all;   
     return 0;
   } 
-fprintf(stderr,"a");
   // check if the data hash in the blockchain matches the network block string
   memset(data2,0,strlen(data2));
   crypto_hash_sha512((unsigned char*)data2,(const unsigned char*)data,strnlen(data,BUFFER_SIZE));

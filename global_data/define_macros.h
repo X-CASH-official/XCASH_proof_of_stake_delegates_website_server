@@ -13,7 +13,7 @@ Using define statements instead of constants for increased efficiency
 #define RANDOM_STRING_LENGTH 100 // The length of the random string
 
 // lengths
-#define BUFFER_SIZE 64000
+#define BUFFER_SIZE 164000
 #define BUFFER_SIZE_RESERVE_PROOF 10000
 #define BUFFER_SIZE_NETWORK_BLOCK_DATA 500
 #define DATA_HASH_LENGTH 128 // The length of the SHA2-512 hash
@@ -28,7 +28,6 @@ Using define statements instead of constants for increased efficiency
 #define VRF_DATA_LENGTH 8 // true when the VRF data is verified
 
 #define BLOCK_VERIFIERS_IP_ADDRESS_TOTAL_LENGTH 100 // The maximum length of the block verifiers IP address
-#define BUFFER_SIZE 64000 
 #define RESERVE_PROOFS_LENGTH 100 
 #define DATABASE_CONNECTION "mongodb://localhost:27017" // the database connection string
 #define DATABASE_NAME "XCASH_PROOF_OF_STAKE" // The name of the database
