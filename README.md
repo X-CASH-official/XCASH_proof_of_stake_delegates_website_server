@@ -4,7 +4,7 @@ This is the server for the [X-CASH Proof of Stake - Delegates Website](https://g
 
 ## Installation
 
-This program will only run on a Linux/Unix OS at this time. We recommend installing this on a Ubuntu VPS/Server (16.04 or 18.04) with at least 1GB of RAM, for the best compatibility.
+This program will only run on a Linux/Unix OS at this time. We recommend installing this on a Ubuntu VPS/Server (16.04 or 18.04) with at least 2GB of RAM, for the best compatibility.
 
 You will also need to run an X-CASH Daemon and X-CASH RPC wallet on the server. You can either download the latest X-CASH [release](https://github.com/X-CASH-official/X-CASH/releases) or build from [source](https://github.com/X-CASH-official/X-CASH#compiling-x-cash-from-source)
 
@@ -127,15 +127,10 @@ The test will return the number of passed and failed test on the bottom of the c
 ## Running X-CASH Proof of Stake - Delegates Website Server
 
 Then you will need to run the xcash_proof_of_stake_website_server. Navigate to the folder that contains the binary, then run  
-`./xcash_proof_of_stake_delegates_website_server --fee FEE -- minimum_amount MINIMUM_AMOUNT`
-
-Replace FEE a fee (you canuse up to 6 decimal places)
-Replace MINIMUM_AMOUNT with the minimum amount a public address must have before receiving a payment
-
-Note: Payments are sent out daily at UTC 00:00
+`./xcash_proof_of_stake_delegates_website_server`
 
 We suggest you use the screen command to run the program in the background, this way you can still maintenance the server. To do this run  
-`screen -dmS xcash_proof_of_stake_delegates_website_server ./xcash_proof_of_stake_delegates_website_server --fee FEE -- minimum_amount MINIMUM_AMOUNT`
+`screen -dmS xcash_proof_of_stake_delegates_website_server ./xcash_proof_of_stake_delegates_website_server`
 
 To bring the screen from the bacground process to the active process run  
 `screen -x NAME_OF_BACKGROUNDS_SCREEN`
